@@ -1,1 +1,1 @@
-some java programs used for practice
+a collection of small java programs
