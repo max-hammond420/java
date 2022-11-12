@@ -1,44 +1,74 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.util.Arrays;
+
 
 public class BinarySearch {
 	
 	public static int[] readFile(String filename) {
-        File f = new File(filename);
+        int[] nums;
 
         try {
+            File f = new File(filename);
             Scanner sc = new Scanner(f);
 
             String line = sc.nextLine();
-            System.out.println(line);
 
-            String[] str = line.split(" ");
+            String[] numsStr = line.split(" ");
 
-            int[] nums = new int[str.length];
+            nums = new int[numsStr.length];
 
-            for (int i = 0; i < str.length; i++) {
-                nums[i] = Integer.parseInt(str[i]);
+            // iterate over a string array and convert to num array
+            int i = 0;
+            for (String num : numsStr) {
+                nums[i++] = Integer.parseInt(num);
             }
+            // System.out.println(Arrays.toString(nums));
 
             sc.close();
-
-            return nums;
-
-        } catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e) { // Error handling for file not found
             e.printStackTrace();
+            return null;
         }
+        // System.out.println(nums);
+
+        return nums;
 	}
 	
 	public static Integer binarySearch(int low, int high, int search, int[] array) {
-		
-		return null;
+        int mid = (low + high)/2;
+        
+        if (low > high) {
+            return null;
+        }
+
+        if (array[mid] == search) {
+            Integer value = Integer.valueOf(mid);
+            return value;
+        }
+        else if (array[mid] < search) {
+            return binarySearch(mid+1, high, search, array);
+        }
+        else {
+            return binarySearch(low, mid, search, array);
+        }
 	}
 	
 	public static void main(String[] args) {
-        String f = "file.array";
+        if (args.length != 2) {
+            System.out.println("Incorrect usage: java BinarySeaerch.java <num> <file>");
+        }
 
-        System.out.println(readFile(f));
-		
+        int toFind = Integer.parseInt(args[0]);
+        String f = args[1];
+
+	    int[] nums = readFile(f);
+
+        int low = 0;
+        int high = nums.length - 1;
+
+
+        System.out.println(binarySearch(low, high, toFind, nums));
 	}
 }
