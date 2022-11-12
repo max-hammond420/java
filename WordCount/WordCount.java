@@ -64,12 +64,11 @@ public class WordCount {
         }
 
         String[] lines = readFile(args[0]);
-        System.out.println(Arrays.toString(lines));
 
         int lineCount = getLines(lines);
         int wordCount = getWords(lines);
         int characterCount = getCharacters(lines);
 
-        System.out.println(lineCount + ' ' + wordCount + ' ' + characterCount);
+        System.out.println(lineCount + " " + wordCount + " " + characterCount);
     }
 }
