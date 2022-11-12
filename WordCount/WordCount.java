@@ -70,8 +70,6 @@ public class WordCount {
         int wordCount = getWords(lines);
         int characterCount = getCharacters(lines);
 
-        System.out.println(lineCount);
-        System.out.println(wordCount);
-        System.out.println(characterCount);
+        System.out.println(lineCount + ' ' + wordCount + ' ' + characterCount);
     }
 }
