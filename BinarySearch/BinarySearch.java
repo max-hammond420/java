@@ -1,7 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-import java.util.Arrays;
 
 
 public class BinarySearch {
@@ -44,7 +43,7 @@ public class BinarySearch {
         }
 
         if (array[mid] == search) {
-            Integer value = Integer.valueOf(mid + 1);
+            Integer value = Integer.valueOf(mid+1);
             return value;
         }
         else if (array[mid] < search) {
