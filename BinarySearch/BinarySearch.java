@@ -44,7 +44,7 @@ public class BinarySearch {
         }
 
         if (array[mid] == search) {
-            Integer value = Integer.valueOf(mid);
+            Integer value = Integer.valueOf(mid + 1);
             return value;
         }
         else if (array[mid] < search) {
