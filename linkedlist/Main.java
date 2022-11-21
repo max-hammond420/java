@@ -36,8 +36,8 @@ class LinkedList<T> {
         for (int i = 0; i < index; i++) {
             current = current.getChild();
             if (i == index) {
-                return current.getChild(); 
-            } 
+                return current.getChild();
+            }
         }
     }
 
@@ -62,7 +62,7 @@ class LinkedList<T> {
         if (index < 0 || index >= size) {
             System.out.println("Invalid index");
             return;
-        } 
+        }
         Node<T> current = root;
         for (int i = 0; i < index; i++) {
             current = current.getChild();
