@@ -36,6 +36,7 @@ public class LargestClass {
                     classCount.put(classes.get(i), 1);
                 }
             }
+
             scan.close();
 
             return classCount;
